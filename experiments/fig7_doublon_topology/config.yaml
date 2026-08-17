@@ -1,0 +1,19 @@
+# Figure 7 -- finite-size edge-localised doublon modes in a shift-invert spectral window.
+output: fig7_doublon_topology.pdf
+
+system:
+  L: 12               # square lattice side (L*L sites)
+  U: 10.0             # on-site Kerr strength
+
+spectra:              # panels (a),(b): spectrum coloured by edge-localisation
+  flux_nonzero: 0.25
+  flux_zero: 0.0
+  kband: 120
+
+selection:            # doublon / edge-state thresholds
+  doublon_frac_thr: 0.5    # eigenstate counts as doublon if frac > this
+  edge_loc_thr: 0.6        # ... and edge state if edge-localisation > this
+  band_ylim: 1.1           # +/- window around 2U in energy plots
+
+edge_state:           # panel (c): most edge-localised candidate at nonzero flux
+  flux: 0.25

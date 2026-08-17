@@ -1,0 +1,15 @@
+# Figure 8 -- directional boundary transport of a doublon packet; the direction
+# reverses with the sign of the flux. No topological invariant is computed.
+output: fig8_chiral_transport.pdf
+
+system:
+  L: 12               # square lattice side (L*L sites)
+  U: 10.0             # on-site Kerr strength
+  T: 260.0            # total evolution time
+  n_time: 200         # number of time slices
+  energy_window: 0.12 # narrow doublon-band window selecting one chirality
+  kband: 120          # number of eigenpairs from shift-invert near E=2U
+
+panels:               # two orbits, opposite flux signs
+  flux_plus: 0.25
+  flux_minus: -0.25

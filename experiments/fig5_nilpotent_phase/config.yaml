@@ -1,0 +1,36 @@
+output: fig5_nilpotent_phase.pdf
+
+single_mode:
+  extent: 10.0
+  grid_points: 2048
+  certificate_points: 4096
+  shifts: [0.22, -0.11, 0.18, 0.07, -0.16, 0.21, -0.08, 0.14]
+  cubic_strengths: [0.055, 0.032, -0.021, 0.047, 0.028, -0.018, 0.041, 0.025]
+
+two_mode:
+  extent: 8.0
+  grid_points: 128
+  certificate_points: 192
+  shifts:
+    - [0.16, -0.08]
+    - [-0.07, 0.13]
+    - [0.11, 0.05]
+    - [-0.04, -0.12]
+    - [0.14, 0.09]
+    - [-0.09, 0.06]
+  cubic_strengths: [0.040, 0.030, -0.018, 0.035, 0.022, 0.028]
+  monomial_weights:
+    x0^2x1: 1.0
+    x0x1^2: -0.55
+    x0^3: 0.20
+    x1^3: -0.15
+
+scaling:
+  degree: 3
+  depth: 3
+  modes: [24, 36, 52, 72, 96, 128, 160]
+  coefficient_scale: 0.01
+  shift_scale: 0.03
+  warmups: 2
+  repeats: 7
+  target_seconds: 0.04

@@ -1,0 +1,103 @@
+{
+  "files": {
+    "bounded.json": "bb53c519a8f9968eb01e6ccd0bab83381dcda2c80af3160ba8ec9a8ea7d04db4",
+    "control.json": "7a3db8b10ed3e2ce9ffb747fe878c251c1db55fcd0dadde7ffc893bca9771a87",
+    "cubic.json": "a879e33556d8bf0fab268d287feb2b556a043df7a4625dc47ee3a9a547fcc473",
+    "doublon.json": "44531023586105142f8f611c1fe62dd12a6c004614089fac7ff9b15dff3ef529",
+    "otoc.json": "8d8ee53bdb709ec79788a95e1285452ce9b328278531e5d8e58469f951e4a365",
+    "squeezing.json": "fbb9a0bf18b1888d0b2422293aaeca3a020a8b21fe713386566c57ec11cb911e",
+    "task-00054.json": "4c3b1a79c7acbfe4ea0d95b006f5e1ac140f266163df63777ea197b509d08524",
+    "task-00054.npz": "a34fdc415bb3e07eb2e39f2d7f6fe8cdc35c977b0ec0d02a0069aaf0b8aaca08",
+    "task-00063.json": "f749fd14ef2d234f0abf73a805aebb3b5a40c51066e6d976a9c49d99dcae57ab",
+    "task-00063.npz": "c69c94b0e228704d7b0acd202b2f17c32d58487ced7c8e29ac068b80f75830c7",
+    "topology.json": "5a57e71de0c0e75c84131d0dafe5d84d928af2543c871ced803ed4404e2f0d3f"
+  },
+  "profile": "production",
+  "protected_source_checksums": {
+    "notes/figures/fig12_kerr_control_2d.pdf": "3ad4c1c6ce4304cc6ba544819d2592d588407f8375914aa4702c94541b52b0b4",
+    "notes/figures/fig12_kerr_control_2d_cluster.pdf": "6b4339f1a313ce53b64d498cea81c09dfc5a5078e1bac0be6960b3758c20decb",
+    "notes/figures/fig1_gaussian.pdf": "c384cf54dc3050c2fc5179b2a65f6309f52850b008d1af6644e0a7d407037a5b",
+    "notes/figures/fig2_beyond_gaussian.pdf": "cff013931ce4afd4f5fd0ad990b97c0fa02b5bde75eba23be4b56b3e421858fe",
+    "notes/figures/fig3_bounded_n.pdf": "fb660d943c57097a23650e203daa07eb7b569e8ab4b72044f5a0b46a0200ab28",
+    "notes/figures/fig3_bounded_n_cluster.pdf": "88a7d2ef50490b34f8b865a39aa342778eecc50533acfcb65c0dbea3f29211a5",
+    "notes/figures/fig4_doublon.pdf": "69c5a3b50326f8dc98e37d24afbc1878e56eeb4a01b86ffce9ff6611c6c080ba",
+    "notes/figures/fig4_doublon_cluster.pdf": "1e3bbdcbd4f09aaa92f2e5d9dc24bddd15f5ac3c0175414e0750aba19eebb4f8",
+    "notes/figures/fig5_nilpotent_phase.pdf": "aa65db46ff43e85b79e13d8d3dbcb9326e4bcc452e53f409e34b713fa6e9e2db",
+    "notes/figures/fig5_nilpotent_phase_cluster.pdf": "0b4ab796cdf3d9cef275a5f24141e59f3ad058ce39b53ad4260eaa5594791e39",
+    "notes/figures/fig6_otoc.pdf": "1dbfcfbb1ef480097e92e98d2dbfbda9b5edd14e3ba1f3e1440d50731dbc11dc",
+    "notes/figures/fig6_otoc_cluster.pdf": "a1b883a015bff6c35d68f039a3e8aa21e3a94d7abe76c11ee07c3b91114561a2",
+    "notes/figures/fig7_doublon_topology.pdf": "6e80fa94cd6949e4fecc751e1400e196d3256cb5b533b702ea09e1f7a08fe6c6",
+    "notes/figures/fig7_doublon_topology_cluster.pdf": "56b39196bd7f511b205258f1fd709a64849ad7b5fc79e08441b67822d6b83b16",
+    "notes/figures/fig8_chiral_transport.pdf": "e6c1e6317c143223d8a40327f784e9d3866cba00bb9a7bf4412845e32452dff8",
+    "notes/figures/fig9_squeezing.pdf": "7d11299277e9a135f7b2856f3fa1ba5c8d16c41a07b52aa01571f4492ab5b4ab",
+    "notes/figures/fig9_squeezing_cluster.pdf": "15449673e7ce5301dacfe2fe784e3cc4e0c91bbf03ce57ef8ff69c5cf18f1429",
+    "notes/main.tex": "581193aaa5f3ec11f461ed1bd324826132e1beb2a269a7e18d9907529495ab6d"
+  },
+  "selected_otoc": [
+    {
+      "U": 0.0,
+      "arrays": "task-00054.npz",
+      "record": "task-00054.json",
+      "task_id": 54
+    },
+    {
+      "U": 8.0,
+      "arrays": "task-00063.npz",
+      "record": "task-00063.json",
+      "task_id": 63
+    }
+  ],
+  "source_path": "cluster_results/20260714T212532Z-production-08c652e",
+  "source_run_id": "20260714T212532Z-production-08c652e",
+  "task_counts": {
+    "bounded": 25,
+    "control": 421,
+    "cubic": 16,
+    "doublon": 42,
+    "otoc": 72,
+    "squeezing": 50,
+    "topology": 1424
+  },
+  "task_git_shas": [
+    "08c652efdb37840249bcbcc34b0d3bf2e125be70"
+  ],
+  "validation_checks": [
+    {
+      "experiment": "bounded",
+      "passed": true,
+      "reason": "complete"
+    },
+    {
+      "experiment": "doublon",
+      "passed": true,
+      "reason": "strong-coupling asymptote 2J^2/U certified"
+    },
+    {
+      "experiment": "otoc",
+      "passed": true,
+      "reason": "ballistic fronts extracted for every task"
+    },
+    {
+      "experiment": "topology",
+      "passed": true,
+      "reason": "gapped, integer, size/grid-stable multiplets (21/22 multiplets certified; gap closure at L=12 U=8 flux=+0.25 grid=8)"
+    },
+    {
+      "experiment": "control",
+      "passed": true,
+      "reason": "finite-difference gradient certified"
+    },
+    {
+      "experiment": "cubic",
+      "passed": true,
+      "reason": "complete"
+    },
+    {
+      "experiment": "squeezing",
+      "passed": true,
+      "reason": "references and perturbative orders certified (5 below-floor fits excluded)"
+    }
+  ],
+  "validation_git_sha": "0cec50b62bd6ab789d7ee6ec18219822c191219f",
+  "validation_passed": true
+}

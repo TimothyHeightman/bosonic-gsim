@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gbosons"
+version = "0.1.0"
+description = "Lie-algebraic (g-sim) classical simulation of bosonic systems"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "scipy>=1.9", "matplotlib>=3.6", "pyyaml>=6.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

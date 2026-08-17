@@ -1,0 +1,15 @@
+# Figure 1 — Gaussian family: symplectic-transfer exactness + polynomial scaling.
+output: fig1_gaussian.pdf
+seed: 0
+
+squeezing:          # panel (a): single-mode squeezing <n(t)> = sinh^2(r t)
+  xi: 0.6
+  t_max: 1.6
+  n_time: 200
+  fock_cutoff: 100  # converged truncated-Fock validation dimension
+  fock_points: 8    # number of Fock validation markers
+
+scaling:            # panel (b): single-thread wall-clock for the n x n coincidence matrix
+  modes: [64, 128, 256, 512, 1024]   # asymptotic regime where the O(n^3) kernel dominates overhead
+  repeats: 7          # timing repeats per n (report median and interquartile range)
+  target_seconds: 0.05  # inner-loop accumulation target so each timing >> call/timer overhead

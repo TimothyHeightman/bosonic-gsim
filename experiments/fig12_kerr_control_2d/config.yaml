@@ -1,0 +1,22 @@
+# Figure 12 -- the variational result for the paper, in two parts:
+#   (a) TRUST GATE: the reverse-mode gradient through the interacting 2D engine
+#       matches finite differences to ~1e-11 (reproducible).
+#   (b,c) NEW CAPABILITY: exact-gradient control binds two separated photons into a
+#       doublon at a target site of a 2D Hofstadter-Kerr lattice, past the passive
+#       bound p=1/2 in the same two-photon carrier.
+output: fig12_kerr_control_2d.pdf
+seed: 1
+
+system:
+  L: 5                  # L x L lattice, M = 25 sites, d_{25,2}=325
+  flux: 0.25            # Hofstadter flux per plaquette
+  input_sites: [0, 1]   # split input |1,1>
+  target_site: 6        # bind the pair into a doublon here
+
+optimize:
+  layers: [1, 2, 3, 4, 5]   # ansatz depth sweep
+  restarts: 5
+  restart_seed: 7
+  steps: 250
+  lr: 0.06
+  map_layers: 5             # depth for the 2D density map + trust-gate check

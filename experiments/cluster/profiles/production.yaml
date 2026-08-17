@@ -1,0 +1,98 @@
+bounded:
+  modes_by_cutoff:
+    "1": [64, 128, 256, 512, 1024]
+    "2": [32, 64, 128, 256, 512]
+    "3": [24, 48, 96, 160, 256]
+    "4": [16, 24, 32, 48, 64]
+    "5": [12, 16, 24, 32, 40]
+  J: 1.0
+  U: 0.7
+  time: 0.5
+  seed: 31
+  warmups: 1
+  repeats: 7
+
+doublon:
+  J: 1.0
+  dynamics_modes: [101, 201, 401]
+  spectrum_modes: [101, 201, 401]
+  U_values: [0.0, 2.0, 4.0, 8.0, 12.0, 16.0]
+  spectrum_U_values: [4.0, 6.0, 8.0, 12.0, 16.0, 24.0, 32.0, 48.0]
+  T_by_modes: {"101": 16.0, "201": 32.0, "401": 48.0}
+  n_time: 72
+  eig_tol: 1.0e-10
+
+# NOTE: do not reshape these otoc keys while a submission of this profile is
+# still running or being re-aggregated -- task dicts are content-hashed, and
+# any change orphans the completed raw records.  For the NEXT production run,
+# uncomment the reshaping block below: it cuts the per-task cost ~5x (the
+# 2h/12h walltime overruns of run 20260714T212532Z came from here) and
+# switches to walltime-aware resource bins.
+otoc:
+  modes: [120, 200, 300, 400]
+  U_values: [0.0, 2.0, 4.0, 8.0, 12.0, 16.0]
+  seeds: [0, 1, 2]
+  J: 1.0
+  T_by_modes: {"120": 20.0, "200": 32.0, "300": 40.0, "400": 48.0}
+  n_time: 48
+  site_chunk: 12
+  thresholds: [1.0e-5, 1.0e-4, 1.0e-3]
+  # --- reshaped v2 (enable together, replacing the keys above) ---
+  # n_time: 24
+  # site_chunk: 64
+  # site_stride: 2
+  # U_values_by_modes: {"300": [0.0, 2.0, 8.0, 16.0], "400": [0.0, 8.0, 16.0]}
+  # seeds_by_modes: {"300": [0, 1], "400": [0]}
+
+topology:
+  L_values: [8, 12, 16]
+  U_values: [8.0, 10.0, 16.0]
+  flux_values: [0.25, -0.25]
+  main_grid: 8
+  stability_L: 8
+  stability_U: 10.0
+  stability_grids: [6, 10]
+  oversample: 8
+  eig_tol: 1.0e-10
+
+control:
+  L_values: [5, 7, 9]
+  depths_by_L: {"5": [1, 2, 3, 4, 5, 6, 7, 8], "7": [1, 2, 3, 4, 5, 6, 7, 8], "9": [4, 6, 8]}
+  geometries_by_L: {"5": [0, 1], "7": [0, 1], "9": [0]}
+  restarts: 30
+  restart_chunk_size: 5
+  seed: 7
+  flux: 0.25
+  steps: 250
+  lr: 0.06
+  gradient_check: {L: 5, depth: 1, step: 1.0e-6}
+
+cubic:
+  modes_by_degree:
+    "3": [192, 256, 384, 512, 768]
+    "4": [16, 24, 32, 48, 64]
+    "5": [8, 12, 16, 20, 24, 32]
+  depth: 3
+  coefficient_scale: 0.01
+  shift_scale: 0.03
+  warmups: 2
+  repeats: 7
+
+squeezing:
+  modes: [2, 4, 6, 8, 12]
+  N: 2
+  U: 1.0
+  J: 0.5
+  time: 1.0
+  orders: [0, 1, 2, 3, 4]
+  r_values: [0.01, 0.015, 0.022, 0.033, 0.05, 0.075, 0.11, 0.16, 0.24, 0.35]
+  reference_order: 6
+  certificate_order: 7
+  # aggregation-only fit window (not part of the task hash): points at the
+  # numerical floor or in the higher-order regime flatten the log-log slopes
+  # (mirrors fit_r_min/fit_r_max/fit_error_floor of fig9_squeezing)
+  fit:
+    observable_floor: 1.0e-12
+    observable_cap: 5.0e-2
+    leakage_floor: 1.0e-6
+    leakage_cap: 0.5

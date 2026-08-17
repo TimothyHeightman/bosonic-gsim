@@ -1,0 +1,29 @@
+output: fig4_doublon.pdf
+
+system:
+  modes: 41
+  J: 1.0
+  T: 10.0
+  n_time: 120
+
+lightcones:
+  U_free: 0.0
+  U_bound: 8.0
+
+binding:
+  curves: [[0.0, "#829F82"], [2.0, "#C19A6B"], [8.0, "#7F525D"]]
+
+strong_coupling:
+  modes: 31
+  J: 1.0
+  U_values: [6.0, 8.0, 12.0, 16.0, 24.0]
+  fit_U_min: 8.0
+  eig_tol: 1.0e-10
+
+validation:
+  modes: 4
+  J: 1.0
+  U: 8.0
+  T: 2.0
+  n_time: 6
+  cutoff: 3

@@ -1,0 +1,12 @@
+output: fig2_beyond_gaussian.pdf
+
+hom:
+  n_theta: 200
+  fock_cutoff: 3
+
+validation:
+  modes: 4
+  occupation: [1, 1, 0, 0]
+  fock_cutoff: 3
+  instances: 12
+  seed: 3

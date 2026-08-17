@@ -1,0 +1,46 @@
+{
+  "arrays": "task-00054.npz",
+  "config_hash": "cb5b1f9688b0da6d",
+  "environment": {
+    "matplotlib": "3.8.3",
+    "numpy": "1.26.4",
+    "platform": "Linux-6.8.0-117-generic-x86_64-with-glibc2.39",
+    "python": "3.11.9",
+    "scipy": "1.12.0"
+  },
+  "experiment": "otoc",
+  "git_sha": "08c652efdb37840249bcbcc34b0d3bf2e125be70",
+  "profile": "production",
+  "result": {
+    "carrier_dimension": 80200,
+    "front_velocities": {
+      "0.0001": 1.9583333333333337,
+      "0.001": 1.6645833333333333,
+      "1e-05": 2.0304574275362324
+    },
+    "wall_seconds": 24684.42512778472
+  },
+  "slurm": {
+    "SLURMD_NODENAME": "licca041",
+    "SLURM_ARRAY_JOB_ID": "9874914",
+    "SLURM_ARRAY_TASK_ID": "0",
+    "SLURM_JOB_ID": "9874919"
+  },
+  "status": "complete",
+  "task": {
+    "J": 1.0,
+    "T": 48.0,
+    "U": 0.0,
+    "modes": 400,
+    "n_time": 48,
+    "resource": "medium",
+    "seed": 0,
+    "site_chunk": 12,
+    "task_id": 54,
+    "thresholds": [
+      1e-05,
+      0.0001,
+      0.001
+    ]
+  }
+}

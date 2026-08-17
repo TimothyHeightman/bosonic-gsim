@@ -1,0 +1,41 @@
+output: fig9_squeezing.pdf
+
+system:
+  modes: 2
+  N: 2
+  U: 1.0
+  J: 0.5
+  init: [1, 1]
+
+convergence:
+  r: 0.4
+  t_max: 4.0
+  n_time: 120
+  orders: [0, 1, 2]
+  reference_order: 8
+  certificate_order: 9
+
+error:
+  t_max: 2.5
+  n_time: 60
+  log10_r_min: -2.0
+  log10_r_max: -0.35
+  n_r: 14
+  orders: [0, 1, 2]
+  reference_order: 8
+  certificate_order: 9
+  fit_r_min: 0.02
+  fit_r_max: 0.25
+  fit_error_floor: 1.0e-13
+
+cost:
+  orders: [0, 1, 2]
+  modes_by_order:
+    "0": [8, 16, 32, 64, 96]
+    "1": [4, 8, 12, 16, 20, 24]
+    "2": [3, 4, 6, 8, 10, 12]
+  r: 0.2
+  time: 0.5
+  warmups: 1
+  repeats: 7
+  target_seconds: 0.03

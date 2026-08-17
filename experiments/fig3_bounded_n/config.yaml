@@ -1,0 +1,33 @@
+output: fig3_bounded_n.pdf
+
+dynamics:
+  modes: 4
+  N: 2
+  seed: 4
+  hop_scale: 0.6
+  chi: [[0, 1, 1.0], [2, 3, 0.8]]
+  init: [1, 1, 0, 0]
+  t_max: 2.5
+  n_time: 80
+  fock_cutoff: 3
+  fock_points: 7
+
+mixed_sectors:
+  modes: 5
+  source: 2
+  readout: 2
+  J: 1.0
+  U: 1.5
+  t_max: 4.0
+  n_time: 100
+
+scaling:
+  cutoffs: [1, 2, 3]
+  modes: [8, 12, 16, 24, 32, 48]
+  J: 1.0
+  U: 0.7
+  time: 0.5
+  seed: 31
+  warmups: 1
+  repeats: 7
+  target_seconds: 0.03

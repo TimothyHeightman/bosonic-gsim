@@ -1,0 +1,17 @@
+{
+  "computed_invariant": false,
+  "environment": {
+    "float_precision": "float64/complex128",
+    "numpy": "1.24.3",
+    "platform": "macOS-26.5.1-x86_64-i386-64bit",
+    "processor": "i386",
+    "python": "3.9.16",
+    "scipy": "1.10.1"
+  },
+  "figure": "fig8_chiral_transport.pdf",
+  "minimum_doublon_fraction_minus": 0.9175174365774382,
+  "minimum_doublon_fraction_plus": 0.9175076233278686,
+  "sampled_eigenpairs": 120,
+  "winding_minus_flux": -0.9893638685145411,
+  "winding_plus_flux": 1.7680049998462104
+}

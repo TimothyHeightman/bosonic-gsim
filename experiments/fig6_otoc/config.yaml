@@ -1,0 +1,26 @@
+# Figure 6 -- operator spreading (OTOC) light-cones in the N=2 Bose-Hubbard
+# chain: U=0 shows a single fast front, U=8J splits into fast + slow (bound-pair).
+output: fig6_otoc.pdf
+
+system:
+  modes: 80           # chain length n; d_{80,2}=3240 in the two-photon carrier
+  J: 1.0              # hopping (set inside chain())
+  T: 16.0             # total evolution time
+  n_time: 32          # number of time slices
+  seed: 0             # random initial pure state on the sector
+
+panels:               # one log-color light-cone heatmap per U
+  U_values: [0.0, 8.0]
+
+validation:           # panel (a): OTOC error vs full-Fock; g-sim (Kerr) vs Gaussian (Kerr dropped)
+  modes: 5            # small n where the full cutoff^n Fock space is affordable
+  cutoff: 3           # N=2 fits in per-mode cutoff 3
+  U: 8.0              # Kerr strength of the true system
+  T: 4.0
+  n_time: 9
+  seed: 1
+
+plot:
+  log_floor: 1.0e-6   # added before log10 (matches source 1e-6)
+  vmin: -5
+  vmax: 0
