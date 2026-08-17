@@ -7,7 +7,7 @@
     "python": "3.9.16",
     "scipy": "1.10.1"
   },
-  "figure": "fig2_beyond_gaussian.pdf",
+  "figure": "fig8_beyond_gaussian.pdf",
   "hom_max_analytic_error": 4.440892098500626e-16,
   "hom_max_fock_error": 2.220446049250313e-16,
   "random_interferometer_max_fock_error": 4.440892098500626e-16,

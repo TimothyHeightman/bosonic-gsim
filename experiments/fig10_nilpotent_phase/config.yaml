@@ -1,4 +1,4 @@
-output: fig5_nilpotent_phase.pdf
+output: fig10_nilpotent_phase.pdf
 
 single_mode:
   extent: 10.0

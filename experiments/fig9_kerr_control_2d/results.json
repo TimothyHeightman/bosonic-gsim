@@ -43227,7 +43227,7 @@
     "python": "3.9.16",
     "scipy": "1.10.1"
   },
-  "figure": "fig12_kerr_control_2d.pdf",
+  "figure": "fig9_kerr_control_2d.pdf",
   "gradient_max_absolute_error": 1.7643672720751846e-10,
   "passive_bound": 0.5,
   "restart_seed": 7,

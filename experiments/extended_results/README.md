@@ -31,7 +31,7 @@ OTOC figure and replaces the threshold-front fit in panel (d) by the integrated
 commutator weight \(W_\psi(t)=\sum_i C_\psi(i,t)\).
 
 The main-text topology summary is written to
-`fig10_topological_doublon_extended.pdf`. It combines the open-boundary
+`fig6_topological_doublon_extended.pdf`. It combines the open-boundary
 spectral comparison, the certified doublon-multiplet Chern number, and
 flux-reversed edge transport. The detailed Figures 7, 7b, and 8 remain
 available as supporting outputs.

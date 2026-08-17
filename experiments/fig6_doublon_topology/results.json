@@ -26247,7 +26247,7 @@
     "python": "3.9.16",
     "scipy": "1.10.1"
   },
-  "figure": "fig7_doublon_topology.pdf",
+  "figure": "fig6_doublon_topology.pdf",
   "representative_boundary_weight": 0.9552355757242164,
   "representative_energy": 20.141750519139965,
   "sampled_eigenpairs": 120

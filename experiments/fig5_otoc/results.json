@@ -1670,7 +1670,7 @@
     "python": "3.9.16",
     "scipy": "1.10.1"
   },
-  "figure": "fig6_otoc.pdf",
+  "figure": "fig5_otoc.pdf",
   "main_carrier_dimension": 3240,
   "observable": "state-dependent squared commutator",
   "quadratic_baseline_max_difference": 1.2358286286979463,

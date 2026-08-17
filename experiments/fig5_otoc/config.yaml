@@ -1,6 +1,6 @@
 # Figure 6 -- operator spreading (OTOC) light-cones in the N=2 Bose-Hubbard
 # chain: U=0 shows a single fast front, U=8J splits into fast + slow (bound-pair).
-output: fig6_otoc.pdf
+output: fig5_otoc.pdf
 
 system:
   modes: 80           # chain length n; d_{80,2}=3240 in the two-photon carrier

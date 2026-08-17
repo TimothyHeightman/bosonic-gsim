@@ -90,7 +90,7 @@ squeezing:
   certificate_order: 7
   # aggregation-only fit window (not part of the task hash): points at the
   # numerical floor or in the higher-order regime flatten the log-log slopes
-  # (mirrors fit_r_min/fit_r_max/fit_error_floor of fig9_squeezing)
+  # (mirrors fit_r_min/fit_r_max/fit_error_floor of fig4_squeezing)
   fit:
     observable_floor: 1.0e-12
     observable_cap: 5.0e-2

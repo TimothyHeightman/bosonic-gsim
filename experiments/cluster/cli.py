@@ -25,14 +25,14 @@ from .manifest import EXPERIMENTS, build, load_profile
 from . import tasks as kernels
 
 ROOT = Path(__file__).resolve().parents[2]
-FIGURE_MAP = {"bounded": "fig3_bounded_n.pdf", "doublon": "fig4_doublon.pdf",
-              "otoc": "fig6_otoc.pdf", "topology": "fig7_doublon_topology.pdf",
-              "control": "fig12_kerr_control_2d.pdf",
-              "cubic": "fig5_nilpotent_phase.pdf", "squeezing": "fig9_squeezing.pdf"}
+FIGURE_MAP = {"bounded": "fig2_bounded_n.pdf", "doublon": "fig3_doublon.pdf",
+              "otoc": "fig5_otoc.pdf", "topology": "fig6_doublon_topology.pdf",
+              "control": "fig9_kerr_control_2d.pdf",
+              "cubic": "fig10_nilpotent_phase.pdf", "squeezing": "fig4_squeezing.pdf"}
 RESULT_MAP = {name: ROOT / "experiments" / folder / "results.json" for name, folder in {
-    "bounded": "fig3_bounded_n", "doublon": "fig4_doublon", "otoc": "fig6_otoc",
-    "topology": "fig7_doublon_topology", "control": "fig12_kerr_control_2d",
-    "cubic": "fig5_nilpotent_phase", "squeezing": "fig9_squeezing"}.items()}
+    "bounded": "fig2_bounded_n", "doublon": "fig3_doublon", "otoc": "fig5_otoc",
+    "topology": "fig6_doublon_topology", "control": "fig9_kerr_control_2d",
+    "cubic": "fig10_nilpotent_phase", "squeezing": "fig4_squeezing"}.items()}
 
 
 def _jsonable(value):
@@ -145,7 +145,7 @@ def _fit_log_power_window(x, y, x_min=0.0, x_max=float("inf"),
     Points below `floor` sit at the numerical noise floor of the propagation
     and points above `cap` are contaminated by higher orders; both flatten the
     fitted slope if included (this mirrors fit_r_min/fit_r_max/fit_error_floor
-    of the original fig9_squeezing experiment).  Returns (slope, stderr,
+    of the original fig4_squeezing experiment).  Returns (slope, stderr,
     points_used).
     """
     x, y = np.asarray(x, dtype=float), np.asarray(y, dtype=float)

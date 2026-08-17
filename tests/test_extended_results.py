@@ -30,7 +30,7 @@ class ExtendedResultsTests(unittest.TestCase):
 
     def test_output_guard(self):
         self.assertEqual(output_path("example.pdf").parent, OUTPUT_DIR.resolve())
-        for invalid in ("../fig3_bounded_n.pdf", "fig3_bounded_n.png", "/tmp/a.pdf"):
+        for invalid in ("../fig2_bounded_n.pdf", "fig2_bounded_n.png", "/tmp/a.pdf"):
             with self.assertRaises(ValueError):
                 output_path(invalid)
 
@@ -124,18 +124,18 @@ class ExtendedResultsTests(unittest.TestCase):
 
     def test_extended_figures_exist_separately(self):
         expected = {
-            "fig1_gaussian_extended.pdf",
-            "fig2_beyond_gaussian_extended.pdf",
-            "fig3_bounded_n_extended.pdf",
-            "fig4_doublon_extended.pdf",
-            "fig5_nilpotent_phase_extended.pdf",
-            "fig6_otoc_alternative.pdf",
-            "fig6_otoc_extended.pdf",
-            "fig7b_doublon_chern_extended.pdf",
-            "fig10_topological_doublon_extended.pdf",
-            "fig9_squeezing_extended.pdf",
-            "fig12_kerr_control_extended.pdf",
-            "fig8_chiral_transport_extended.pdf",
+            "fig7_gaussian_extended.pdf",
+            "fig8_beyond_gaussian_extended.pdf",
+            "fig2_bounded_n_extended.pdf",
+            "fig3_doublon_extended.pdf",
+            "fig10_nilpotent_phase_extended.pdf",
+            "fig5_otoc_alternative.pdf",
+            "fig5_otoc_extended.pdf",
+            "fig6b_doublon_chern_extended.pdf",
+            "fig6_topological_doublon_extended.pdf",
+            "fig4_squeezing_extended.pdf",
+            "fig9_kerr_control_extended.pdf",
+            "fig6_chiral_transport_extended.pdf",
         }
         self.assertEqual(
             {path.name for path in OUTPUT_DIR.glob("*.pdf")},

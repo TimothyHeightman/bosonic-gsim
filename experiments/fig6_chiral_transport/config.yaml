@@ -1,6 +1,6 @@
 # Figure 8 -- directional boundary transport of a doublon packet; the direction
 # reverses with the sign of the flux. No topological invariant is computed.
-output: fig8_chiral_transport.pdf
+output: fig6_chiral_transport.pdf
 
 system:
   L: 12               # square lattice side (L*L sites)

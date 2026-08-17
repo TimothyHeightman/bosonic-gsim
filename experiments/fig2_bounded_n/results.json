@@ -738,7 +738,7 @@
     "python": "3.9.16",
     "scipy": "1.10.1"
   },
-  "figure": "fig3_bounded_n.pdf",
+  "figure": "fig2_bounded_n.pdf",
   "fixed_sector_max_fock_error": 3.5388358909926865e-16,
   "mixed_sector": {
     "carrier_dimension": 21,

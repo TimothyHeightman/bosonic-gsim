@@ -1,4 +1,4 @@
-output: fig2_beyond_gaussian.pdf
+output: fig8_beyond_gaussian.pdf
 
 hom:
   n_theta: 200

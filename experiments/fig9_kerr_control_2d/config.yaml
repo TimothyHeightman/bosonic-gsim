@@ -4,7 +4,7 @@
 #   (b,c) NEW CAPABILITY: exact-gradient control binds two separated photons into a
 #       doublon at a target site of a 2D Hofstadter-Kerr lattice, past the passive
 #       bound p=1/2 in the same two-photon carrier.
-output: fig12_kerr_control_2d.pdf
+output: fig9_kerr_control_2d.pdf
 seed: 1
 
 system:

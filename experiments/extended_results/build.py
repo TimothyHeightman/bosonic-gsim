@@ -47,10 +47,10 @@ def _save(fig, name):
 
 
 def gaussian_figure():
-    source = load_canonical("fig1_gaussian")
+    source = load_canonical("fig7_gaussian")
     cfg = load_config(source.__file__)
     results = json.loads(
-        (ROOT / "experiments" / "fig1_gaussian" / "results.json").read_text())
+        (ROOT / "experiments" / "fig7_gaussian" / "results.json").read_text())
     paper_style()
     fig, (ax_left, ax_right) = plt.subplots(1, 2, figsize=(6.6, 2.6))
 
@@ -109,11 +109,11 @@ def gaussian_figure():
         title=r"(b) $n\times n$ number-correlation matrix")
     ax_right.legend(frameon=False, loc="upper left", fontsize=7)
     fig.tight_layout()
-    _save(fig, "fig1_gaussian_extended.pdf")
+    _save(fig, "fig7_gaussian_extended.pdf")
 
 
 def beyond_gaussian_figure():
-    source = load_canonical("fig2_beyond_gaussian")
+    source = load_canonical("fig8_beyond_gaussian")
     cfg = load_config(source.__file__)
     paper_style()
     fig, (ax_left, ax_right) = plt.subplots(1, 2, figsize=(6.6, 2.6))
@@ -181,12 +181,12 @@ def beyond_gaussian_figure():
     ax_right.set_aspect("equal", adjustable="box")
     #ax_right.legend(frameon=False, fontsize=7, loc="upper left")
     fig.tight_layout()
-    _save(fig, "fig2_beyond_gaussian_extended.pdf")
+    _save(fig, "fig8_beyond_gaussian_extended.pdf")
 
 
 @lru_cache(maxsize=1)
 def _chiral_transport_data():
-    source = load_canonical("fig8_chiral_transport")
+    source = load_canonical("fig6_chiral_transport")
     cfg = load_config(source.__file__)
     system = cfg["system"]
     size, interaction = system["L"], system["U"]
@@ -263,11 +263,11 @@ def chiral_transport_figure():
         title="(c) direction reverses with flux")
     axes[2].legend(frameon=False)
     fig.tight_layout()
-    _save(fig, "fig8_chiral_transport_extended.pdf")
+    _save(fig, "fig6_chiral_transport_extended.pdf")
 
 
 def bounded_figure():
-    source = load_canonical("fig3_bounded_n")
+    source = load_canonical("fig2_bounded_n")
     cfg = load_config(source.__file__)
     summary = load_json("bounded.json")
     fig, axes = plt.subplots(1, 3, figsize=(9.8, 2.8))
@@ -306,11 +306,11 @@ def bounded_figure():
         fontsize=6, color="0.35")
     #axes[2].text(0.97, 0.04, "median and IQR; carrier states", transform=axes[2].transAxes, ha="right", fontsize=6, color="0.4")
     fig.tight_layout()
-    _save(fig, "fig3_bounded_n_extended.pdf")
+    _save(fig, "fig2_bounded_n_extended.pdf")
 
 
 def doublon_figure():
-    source = load_canonical("fig4_doublon")
+    source = load_canonical("fig3_doublon")
     cfg = load_config(source.__file__)
     summary = load_json("doublon.json")
     system = cfg["system"]
@@ -426,15 +426,15 @@ def doublon_figure():
     fig.tight_layout()
     pos_b = axes[1].get_position()
     axes[1].set_position([pos_b.x0 - 0.05, pos_b.y0, pos_b.width, pos_b.height])
-    _save(fig, "fig4_doublon_extended.pdf")
+    _save(fig, "fig3_doublon_extended.pdf")
 
 
 def cubic_figure():
-    source = load_canonical("fig5_nilpotent_phase")
+    source = load_canonical("fig10_nilpotent_phase")
     cfg = load_config(source.__file__)
     summary = load_json("cubic.json")
     local = json.loads(
-        (ROOT / "experiments" / "fig5_nilpotent_phase" / "results.json").read_text())
+        (ROOT / "experiments" / "fig10_nilpotent_phase" / "results.json").read_text())
     fig, axes = plt.subplots(1, 3, figsize=(9.5, 2.75))
     source.panel_single_mode(cfg["single_mode"], axes[0])
     source.panel_two_mode(cfg["two_mode"], axes[1])
@@ -498,7 +498,7 @@ def cubic_figure():
     axes[2].set_ylim(10**(-4.5),10**3)
     axes[2].xaxis.set_minor_formatter(NullFormatter())
     fig.tight_layout()
-    _save(fig, "fig5_nilpotent_phase_extended.pdf")
+    _save(fig, "fig10_nilpotent_phase_extended.pdf")
 
 
 def _otoc_record(task_id):
@@ -508,7 +508,7 @@ def _otoc_record(task_id):
 
 
 def otoc_figure():
-    source = load_canonical("fig6_otoc")
+    source = load_canonical("fig5_otoc")
     cfg = load_config(source.__file__)
     summary = load_json("otoc.json")
     fig = plt.figure(figsize=(11.6, 2.9))
@@ -632,7 +632,7 @@ def otoc_figure():
     #axes[3].text(0.96, 0.1, "range over three seeds",
     #            transform=axes[3].transAxes, ha="right", fontsize=6, color="0.4")
     fig.subplots_adjust(left=0.055, right=0.985, bottom=0.20, top=0.88)
-    _save(fig, "fig6_otoc_extended.pdf")
+    _save(fig, "fig5_otoc_extended.pdf")
 
 
 def topology_figure():
@@ -704,12 +704,12 @@ def topology_figure():
     axes[2].text(0.96, 0.06, "solid/dashed: $\\phi=\\pm1/4$",
                  transform=axes[2].transAxes, ha="right", fontsize=6, color="0.4")
     fig.tight_layout()
-    _save(fig, "fig7b_doublon_chern_extended.pdf")
+    _save(fig, "fig6b_doublon_chern_extended.pdf")
 
 
 @lru_cache(maxsize=1)
 def _edge_spectrum_data():
-    source = load_canonical("fig7_doublon_topology")
+    source = load_canonical("fig6_doublon_topology")
     cfg = load_config(source.__file__)
     system = cfg["system"]
     spectra = cfg["spectra"]
@@ -930,15 +930,15 @@ def topological_doublon_figure():
     axes[3].legend(frameon=False, fontsize=8)
 
     fig.subplots_adjust(left=0.055, right=0.99, bottom=0.13, top=0.90, wspace=0.01)
-    _save(fig, "fig10_topological_doublon_extended.pdf")
+    _save(fig, "fig6_topological_doublon_extended.pdf")
 
 
 def squeezing_figure():
-    source = load_canonical("fig9_squeezing")
+    source = load_canonical("fig4_squeezing")
     cfg = load_config(source.__file__)
     summary = load_json("squeezing.json")
     local = json.loads(
-        (ROOT / "experiments" / "fig9_squeezing" / "results.json").read_text())
+        (ROOT / "experiments" / "fig4_squeezing" / "results.json").read_text())
     system = cfg["system"]
     n, number, interaction, hopping = (
         system["modes"], system["N"], system["U"], system["J"])
@@ -1073,11 +1073,11 @@ def squeezing_figure():
         loc="center left", bbox_to_anchor=(0.01, 0.56),
         handlelength=1.5, handletextpad=0.5, labelspacing=0.25)
     fig.tight_layout()
-    _save(fig, "fig9_squeezing_extended.pdf")
+    _save(fig, "fig4_squeezing_extended.pdf")
 
 
 def control_figure():
-    source = load_canonical("fig12_kerr_control_2d")
+    source = load_canonical("fig9_kerr_control_2d")
     cfg = load_config(source.__file__)
     summary = load_json("control.json")
     paper_style()
@@ -1187,33 +1187,33 @@ def control_figure():
     cbar = fig.colorbar(image, ax=ax_c, fraction=0.046, pad=0.04)
     cbar.ax.tick_params(labelsize=6)
     cbar.set_label(r"pair density $p_j$", fontsize=7)
-    _save(fig, "fig12_kerr_control_extended.pdf")
+    _save(fig, "fig9_kerr_control_extended.pdf")
 
 
 def contact_sheet():
     canonical = [
-        ROOT / "notes" / "figures" / "fig1_gaussian.pdf",
-        ROOT / "notes" / "figures" / "fig2_beyond_gaussian.pdf",
-        ROOT / "notes" / "figures" / "fig3_bounded_n.pdf",
-        ROOT / "notes" / "figures" / "fig4_doublon.pdf",
-        ROOT / "notes" / "figures" / "fig5_nilpotent_phase.pdf",
-        ROOT / "notes" / "figures" / "fig6_otoc.pdf",
-        ROOT / "notes" / "figures" / "fig7_doublon_topology.pdf",
-        ROOT / "notes" / "figures" / "fig9_squeezing.pdf",
-        ROOT / "notes" / "figures" / "fig12_kerr_control_2d.pdf",
-        ROOT / "notes" / "figures" / "fig8_chiral_transport.pdf",
+        ROOT / "notes" / "figures" / "fig7_gaussian.pdf",
+        ROOT / "notes" / "figures" / "fig8_beyond_gaussian.pdf",
+        ROOT / "notes" / "figures" / "fig2_bounded_n.pdf",
+        ROOT / "notes" / "figures" / "fig3_doublon.pdf",
+        ROOT / "notes" / "figures" / "fig10_nilpotent_phase.pdf",
+        ROOT / "notes" / "figures" / "fig5_otoc.pdf",
+        ROOT / "notes" / "figures" / "fig6_doublon_topology.pdf",
+        ROOT / "notes" / "figures" / "fig4_squeezing.pdf",
+        ROOT / "notes" / "figures" / "fig9_kerr_control_2d.pdf",
+        ROOT / "notes" / "figures" / "fig6_chiral_transport.pdf",
     ]
     extended = [
-        OUTPUT_DIR / "fig1_gaussian_extended.pdf",
-        OUTPUT_DIR / "fig2_beyond_gaussian_extended.pdf",
-        OUTPUT_DIR / "fig3_bounded_n_extended.pdf",
-        OUTPUT_DIR / "fig4_doublon_extended.pdf",
-        OUTPUT_DIR / "fig5_nilpotent_phase_extended.pdf",
-        OUTPUT_DIR / "fig6_otoc_extended.pdf",
-        OUTPUT_DIR / "fig7b_doublon_chern_extended.pdf",
-        OUTPUT_DIR / "fig9_squeezing_extended.pdf",
-        OUTPUT_DIR / "fig12_kerr_control_extended.pdf",
-        OUTPUT_DIR / "fig8_chiral_transport_extended.pdf",
+        OUTPUT_DIR / "fig7_gaussian_extended.pdf",
+        OUTPUT_DIR / "fig8_beyond_gaussian_extended.pdf",
+        OUTPUT_DIR / "fig2_bounded_n_extended.pdf",
+        OUTPUT_DIR / "fig3_doublon_extended.pdf",
+        OUTPUT_DIR / "fig10_nilpotent_phase_extended.pdf",
+        OUTPUT_DIR / "fig5_otoc_extended.pdf",
+        OUTPUT_DIR / "fig6b_doublon_chern_extended.pdf",
+        OUTPUT_DIR / "fig4_squeezing_extended.pdf",
+        OUTPUT_DIR / "fig9_kerr_control_extended.pdf",
+        OUTPUT_DIR / "fig6_chiral_transport_extended.pdf",
     ]
     with tempfile.TemporaryDirectory() as temporary:
         directory = Path(temporary)

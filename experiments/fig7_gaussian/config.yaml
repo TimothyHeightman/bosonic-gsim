@@ -1,5 +1,5 @@
 # Figure 1 — Gaussian family: symplectic-transfer exactness + polynomial scaling.
-output: fig1_gaussian.pdf
+output: fig7_gaussian.pdf
 seed: 0
 
 squeezing:          # panel (a): single-mode squeezing <n(t)> = sinh^2(r t)

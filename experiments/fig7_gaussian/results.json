@@ -100,7 +100,7 @@
     "python": "3.9.16",
     "scipy": "1.10.1"
   },
-  "figure": "fig1_gaussian.pdf",
+  "figure": "fig7_gaussian.pdf",
   "seed": 0,
   "squeezing_max_analytic_error": 6.661338147750939e-16,
   "squeezing_max_fock_error": 9.015010959956271e-14

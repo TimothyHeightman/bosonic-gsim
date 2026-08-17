@@ -1,4 +1,4 @@
-output: fig3_bounded_n.pdf
+output: fig2_bounded_n.pdf
 
 dynamics:
   modes: 4

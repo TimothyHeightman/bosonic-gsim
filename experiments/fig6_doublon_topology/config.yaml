@@ -1,5 +1,5 @@
 # Figure 7 -- finite-size edge-localised doublon modes in a shift-invert spectral window.
-output: fig7_doublon_topology.pdf
+output: fig6_doublon_topology.pdf
 
 system:
   L: 12               # square lattice side (L*L sites)

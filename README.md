@@ -48,7 +48,7 @@ Without installing, prefix commands with `PYTHONPATH=src` instead.
 ## Quick start
 
 ```bash
-python experiments/fig2_beyond_gaussian/run.py
+python experiments/fig8_beyond_gaussian/run.py
 ```
 
 That runs a four-mode non-Gaussian number-correlation check against an
@@ -67,20 +67,29 @@ metadata from its last run.
 Run one, or run all of them from seed to plot:
 
 ```bash
-python experiments/fig4_doublon/run.py
+python experiments/fig3_doublon/run.py
 python experiments/run_all.py
 ```
 
 Approximate wall-clock per experiment, single run each on a laptop:
 
-| Experiment | Time | Experiment | Time |
-|---|---|---|---|
-| `fig2_beyond_gaussian` | 1 s | `fig12_kerr_control_2d` | 44 s |
-| `fig5_nilpotent_phase` | 3 s | `fig7_doublon_topology` | 57 s |
-| `fig3_bounded_n` | 5 s | `fig8_chiral_transport` | 75 s |
-| `fig4_doublon` | 5 s | `fig6_otoc` | 86 s |
-| `fig1_gaussian` | 6 s | | |
-| `fig9_squeezing` | 13 s | **all ten** | **~5 min** |
+Directory names follow the figure numbering of the manuscript. Figure 1 is a
+schematic with no associated computation, and Figure 6 is assembled from two
+experiments.
+
+| Manuscript | Experiment | Time |
+|---|---|---|
+| Fig. 2 | `fig2_bounded_n` | 5 s |
+| Fig. 3 | `fig3_doublon` | 5 s |
+| Fig. 4 | `fig4_squeezing` | 13 s |
+| Fig. 5 | `fig5_otoc` | 86 s |
+| Fig. 6 | `fig6_doublon_topology` | 57 s |
+| Fig. 6 | `fig6_chiral_transport` | 75 s |
+| Fig. 7 | `fig7_gaussian` | 6 s |
+| Fig. 8 | `fig8_beyond_gaussian` | 1 s |
+| Fig. 9 | `fig9_kerr_control_2d` | 44 s |
+| Fig. 10 | `fig10_nilpotent_phase` | 3 s |
+| | **all ten** | **~5 min** |
 
 Figures are written to `notes/figures/`, which is created on first run. Results
 are deterministic: seeds are explicit and live in `config.yaml`. To change a
@@ -126,12 +135,20 @@ directory carries a `results.json` with residuals, carrier dimensions, seeds and
 timing samples.
 
 ```bash
-python -m unittest discover -s tests -t .
+python -m unittest discover -s tests
 ```
 
-One test in `tests/test_cluster_suite.py` inspects the SLURM job scripts, which
-are not distributed here, and will error on a fresh clone. Every other test
-passes.
+Three tests need artifacts a fresh clone does not have, and will error until you
+generate them or are working in the internal repository:
+
+- `test_cluster_suite.test_submitted_jobs_do_not_resolve_helpers_from_slurm_spool`
+  reads the SLURM job scripts, which are not distributed here.
+- `test_extended_results.test_extended_figures_exist_separately` needs the
+  extended figures built first (`python -m experiments.extended_results.build`).
+- `test_extended_results.test_protected_sources_are_unchanged` checksums the
+  canonical figure PDFs, which are build outputs and are not committed here.
+
+Everything else passes on a clean checkout.
 
 ## Layout
 
@@ -271,7 +288,7 @@ Each was a real bug that was found and fixed. They are load-bearing.
    range over at least seven repeated measurements. Single-shot timings are not
    acceptable evidence.
 8. Reverse-mode variational gradients must match finite differences to about
-   `1e-10`. This is what panel (a) of `fig12_kerr_control_2d` checks. The
+   `1e-10`. This is what panel (a) of `fig9_kerr_control_2d` checks. The
    gradient is the adjoint of the exponential: dense via
    `expm_frechet(A.conj().T, ...)`, sparse via the costate sweep
    `lam <- expm_multiply(+i theta G^T, lam)` with `grad = 2 Im<lam|G|psi>`. Do
@@ -280,7 +297,7 @@ Each was a real bug that was found and fixed. They are load-bearing.
 
 ## Adding an experiment
 
-Create `experiments/figN_name/` mirroring `experiments/fig1_gaussian/`:
+Create `experiments/figN_name/` mirroring `experiments/fig7_gaussian/`:
 
 - `config.yaml` — **all** parameters: sizes, couplings, seeds, time grids, plot
   ranges. Nothing hard-coded in `run.py`.
