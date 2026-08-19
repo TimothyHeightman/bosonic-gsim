@@ -5,7 +5,7 @@ Lie-algebraic (g-sim) classical simulation of bosonic systems, beyond Gaussian d
 Reference implementation and reproducible numerics for the paper *Lie-algebraic
 classical simulation of bosonic systems beyond Gaussian dynamics*.
 
-> **Paper:** arXiv:XXXX.XXXXX — *link to be added once the preprint is public.*
+ **Paper:** https://arxiv.org/abs/2608.17094
 
 ---
 
